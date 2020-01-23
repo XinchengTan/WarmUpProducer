@@ -1,0 +1,16 @@
+/Users/shenhongyu/Projects/WarmUpProducer/Producer/bin/Debug/Producer.exe
+/Users/shenhongyu/Projects/WarmUpProducer/Producer/bin/Debug/Producer.pdb
+/Users/shenhongyu/Projects/WarmUpProducer/Producer/bin/Debug/NumSharp.Core.dll
+/Users/shenhongyu/Projects/WarmUpProducer/Producer/bin/Debug/System.Buffers.dll
+/Users/shenhongyu/Projects/WarmUpProducer/Producer/bin/Debug/System.Memory.dll
+/Users/shenhongyu/Projects/WarmUpProducer/Producer/bin/Debug/System.Numerics.Vectors.dll
+/Users/shenhongyu/Projects/WarmUpProducer/Producer/bin/Debug/System.Runtime.CompilerServices.Unsafe.dll
+/Users/shenhongyu/Projects/WarmUpProducer/Producer/bin/Debug/System.Buffers.xml
+/Users/shenhongyu/Projects/WarmUpProducer/Producer/bin/Debug/System.Numerics.Vectors.xml
+/Users/shenhongyu/Projects/WarmUpProducer/Producer/bin/Debug/System.Runtime.CompilerServices.Unsafe.xml
+/Users/shenhongyu/Projects/WarmUpProducer/Producer/bin/Debug/System.Memory.xml
+/Users/shenhongyu/Projects/WarmUpProducer/Producer/bin/Debug/NumSharp.Core.pdb
+/Users/shenhongyu/Projects/WarmUpProducer/Producer/obj/anycpu/Debug/Producer.csprojAssemblyReference.cache
+/Users/shenhongyu/Projects/WarmUpProducer/Producer/obj/anycpu/Debug/Producer.csproj.CopyComplete
+/Users/shenhongyu/Projects/WarmUpProducer/Producer/obj/anycpu/Debug/Producer.exe
+/Users/shenhongyu/Projects/WarmUpProducer/Producer/obj/anycpu/Debug/Producer.pdb
