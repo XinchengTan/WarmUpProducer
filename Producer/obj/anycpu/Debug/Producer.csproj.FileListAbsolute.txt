@@ -14,3 +14,7 @@
 /Users/shenhongyu/Projects/WarmUpProducer/Producer/obj/anycpu/Debug/Producer.csproj.CopyComplete
 /Users/shenhongyu/Projects/WarmUpProducer/Producer/obj/anycpu/Debug/Producer.exe
 /Users/shenhongyu/Projects/WarmUpProducer/Producer/obj/anycpu/Debug/Producer.pdb
+/Users/shenhongyu/Projects/WarmUpProducer/Producer/bin/Debug/Newtonsoft.Json.dll
+/Users/shenhongyu/Projects/WarmUpProducer/Producer/bin/Debug/System.Json.dll
+/Users/shenhongyu/Projects/WarmUpProducer/Producer/bin/Debug/System.Json.xml
+/Users/shenhongyu/Projects/WarmUpProducer/Producer/bin/Debug/Newtonsoft.Json.xml

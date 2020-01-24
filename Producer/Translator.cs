@@ -28,7 +28,7 @@ namespace Producer
                 {
                     mean = mean
                 };
-                return new Field("double", name, param);
+                return new Field(name, "double", param);
             });
         }
 
@@ -36,7 +36,7 @@ namespace Producer
         public List<Field> Translate(JObject config)
         {
             List<Field> fields = new List<Field>();
-            foreach(JObject fieldConfig in config["dimension_attributes"])
+            foreach(JObject fieldConfig in (JArray) config["dimension_attributes"])
             {
                 string typeID = (string)fieldConfig["type"];
                 fields.Add(this.CaseAt(typeID, fieldConfig));

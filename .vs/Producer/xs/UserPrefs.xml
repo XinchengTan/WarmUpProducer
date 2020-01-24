@@ -1,18 +1,21 @@
-﻿<Properties StartupConfiguration="{27AC4EFB-8281-4A1B-8BF7-D4BC2B74B99F}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Producer/IProducerToConsumerAdpt.cs">
+﻿<Properties>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Producer/DataGeneratorDefs.cs">
     <Files>
-      <File FileName="Producer/RecordProducer.cs" Line="32" Column="10" />
+      <File FileName="Producer/RecordProducer.cs" Line="43" Column="22" />
       <File FileName="Producer/ConfigDefs.cs" Line="2" Column="19" />
       <File FileName="Producer/EmptyInterface.cs" Line="32" Column="16" />
-      <File FileName="Producer/Program.cs" Line="11" Column="13" />
-      <File FileName="Producer/IProducerToConsumerAdpt.cs" Line="10" Column="22" />
+      <File FileName="Producer/Program.cs" Line="23" Column="1" />
+      <File FileName="Producer/IProducerToConsumerAdpt.cs" Line="8" Column="9" />
+      <File FileName="Producer/Producer.csproj" Line="4" Column="35" />
+      <File FileName="Producer/DataGeneratorDefs.cs" Line="43" Column="36" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
+          <Option id="ShowAllFiles" value="True" />
           <Node name="Producer" expanded="True">
             <Node name="Producer" expanded="True">
-              <Node name="IProducerToConsumerAdpt.cs" selected="True" />
+              <Node name="DataGeneratorDefs.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -21,7 +24,6 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|anycpu" />
-  <MonoDevelop.Ide.ItemProperties.Producer PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

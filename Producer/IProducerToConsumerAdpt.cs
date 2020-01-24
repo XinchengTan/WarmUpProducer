@@ -5,7 +5,7 @@ namespace Producer
 {
     public interface IProducerToConsumerAdpt
     {
-        public void Send(JToken record);
+        void Send(JToken record);
 
     }
 

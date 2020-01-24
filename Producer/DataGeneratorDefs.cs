@@ -40,7 +40,7 @@ namespace Producer
         private static readonly double DEFAULT_MEAN = 0.0;
         private static readonly double DEFAULT_STANDARD_DEVIATION = 20.0;
 
-        public DoubleDataGenerator(double? mean, double? standardDeviation) : this(mean.GetValueOrDefault(DEFAULT_MEAN), standardDeviation.GetValueOrDefault(standardDeviation)) { }
+        public DoubleDataGenerator(double? mean, double? standardDeviation) : this(mean.GetValueOrDefault(DEFAULT_MEAN), standardDeviation.GetValueOrDefault(DEFAULT_STANDARD_DEVIATION)) { }
 
         public DoubleDataGenerator(double mean, double standardDeviation)
         {
