@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Producer
 {
@@ -6,12 +8,13 @@ namespace Producer
     {
         public static void Main(string[] args)
         {
-            IntegerDataGenerator gen = new IntegerDataGenerator();
-            NullErrorGenerator<int> errgen = new NullErrorGenerator<int>(gen);
-            var data = errgen.Make(10);
-            data.ForEach(x => Console.WriteLine(x.ToString()));
-            // errgen.Make(10);
-            // Console.WriteLine(np.random.normal(0.0, 1.0, 10).ToString());
+            DoubleDataGenerator gen = new DoubleDataGenerator();
+
+            Dictionary<string, IJSONDataGeneratorFactory> dict = new Dictionary<string, IJSONDataGeneratorFactory>();
+
+            dict.Add("double", new DoubleJSONDataGeneratorFactory());
+
+
         }
     }
 }

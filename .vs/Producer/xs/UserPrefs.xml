@@ -1,9 +1,5 @@
 ﻿<Properties StartupConfiguration="{27AC4EFB-8281-4A1B-8BF7-D4BC2B74B99F}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Producer/DataGeneratorDefs.cs">
-    <Files>
-      <File FileName="Producer/DataGeneratorDefs.cs" Line="87" Column="31" />
-      <File FileName="Producer/Program.cs" Line="8" Column="10" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">

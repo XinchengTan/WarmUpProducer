@@ -47,11 +47,20 @@
     <Reference Include="NumSharp.Core">
       <HintPath>..\packages\NumSharp.0.20.5\lib\netstandard2.0\NumSharp.Core.dll</HintPath>
     </Reference>
+    <Reference Include="System.Json">
+      <HintPath>..\packages\System.Json.4.7.0\lib\netstandard2.0\System.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataGeneratorDefs.cs" />
+    <Compile Include="ConfigDefs.cs" />
+    <Compile Include="RecordProducer.cs" />
+    <Compile Include="IProducerToConsumerAdpt.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
