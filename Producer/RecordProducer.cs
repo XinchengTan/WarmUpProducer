@@ -4,7 +4,8 @@ using Newtonsoft.Json.Linq;
 
 namespace Producer
 {
-    public class RecordProducer
+    // This was our original definition of Producer
+    public class RecordMaker
     {
         private IProducerToConsumerAdpt adapter;
         private List<IJSONDataGenerator> generators;
@@ -13,7 +14,7 @@ namespace Producer
             {"double", new DoubleJSONDataGeneratorFactory() },
         };
 
-        public RecordProducer(List<Field> fields, IProducerToConsumerAdpt adpt)
+        public RecordMaker(List<Field> fields, IProducerToConsumerAdpt adpt)
         {
             this.adapter = adpt;
             this.generators = this.MakeGenerators(fields);

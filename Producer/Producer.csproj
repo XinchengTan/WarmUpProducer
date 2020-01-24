@@ -61,6 +61,7 @@
     <Compile Include="ConfigDefs.cs" />
     <Compile Include="RecordProducer.cs" />
     <Compile Include="IProducerToConsumerAdpt.cs" />
+    <Compile Include="Translator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

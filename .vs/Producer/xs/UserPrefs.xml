@@ -1,11 +1,16 @@
 ﻿<Properties StartupConfiguration="{27AC4EFB-8281-4A1B-8BF7-D4BC2B74B99F}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Producer/EmptyInterface.cs">
+    <Files>
+      <File FileName="Producer/RecordProducer.cs" Line="15" Column="11" />
+      <File FileName="Producer/ConfigDefs.cs" Line="21" Column="6" />
+      <File FileName="Producer/EmptyInterface.cs" Line="1" Column="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Producer" expanded="True">
             <Node name="Producer" expanded="True">
-              <Node name="DataGeneratorDefs.cs" selected="True" />
+              <Node name="EmptyInterface.cs" selected="True" />
             </Node>
           </Node>
         </State>
