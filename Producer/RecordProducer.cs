@@ -7,7 +7,7 @@ namespace Producer
     // This was our original definition of Producer
     public class RecordMaker
     {
-        private IProducerToConsumerAdpt adapter;
+        private IProducerToConsumerAdpt adapter = new DefaultAdpt();
         private List<IJSONDataGenerator> generators;
         private static readonly Dictionary<string, IJSONDataGeneratorFactory> typeToFacMap = new Dictionary<string, IJSONDataGeneratorFactory>
         {
@@ -21,6 +21,13 @@ namespace Producer
 
         }
 
+        // FOR TESTING
+        public RecordMaker(List<Field> fields)
+        {
+            this.generators = this.MakeGenerators(fields);
+        }
+
+
         private List<IJSONDataGenerator> MakeGenerators(List<Field> fields)
         {
             List<IJSONDataGenerator> generators = new List<IJSONDataGenerator>();
@@ -33,7 +40,7 @@ namespace Producer
             return typeToFacMap[field.typeID].Make(field.param);
         }
 
-        private JToken MakeRecord()
+        public JArray MakeRecord()
         {
             JArray record = new JArray();
             generators.ForEach(generator => record.Add(generator.GenerateJsonData()));

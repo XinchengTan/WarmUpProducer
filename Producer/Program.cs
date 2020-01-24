@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
 
 namespace Producer
 {
@@ -8,11 +9,11 @@ namespace Producer
     {
         public static void Main(string[] args)
         {
-            DoubleDataGenerator gen = new DoubleDataGenerator();
-
-            Dictionary<string, IJSONDataGeneratorFactory> dict = new Dictionary<string, IJSONDataGeneratorFactory>();
-
-            dict.Add("double", new DoubleJSONDataGeneratorFactory());
+            JObject config = new JObject();
+            ConfigToFieldsTranslator parser = new ConfigToFieldsTranslator();
+            List<Field> fields = parser.Translate(config);
+            RecordMaker recordMaker = new RecordMaker(fields);
+            JArray record = recordMaker.MakeRecord();
 
 
         }
