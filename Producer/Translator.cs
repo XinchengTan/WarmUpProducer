@@ -24,16 +24,40 @@ namespace Producer
             this.AddCase("double", jObject => {
                 string name = (string)jObject["name"];
                 double mean = (double)jObject["distribution_params"]["mean"];
+                double std = (double)jObject["distribution_params"]["std"];
                 FieldParam param = new FieldParam
                 {
-                    mean = mean
+                    mean = mean,
+                    standard_deviation = std
                 };
                 return new Field(name, "double", param);
+            });
+
+            this.AddCase("int", jObject => {
+                string name = (string)jObject["name"];
+                double mean = (double)jObject["distribution_params"]["mean"];
+                double std = (double)jObject["distribution_params"]["std"];
+                FieldParam param = new FieldParam
+                {
+                    mean = mean,
+                    standard_deviation = std
+                };
+                return new Field(name, "int", param);
+            });
+
+            this.AddCase("string", jObject => {
+                string name = (string)jObject["name"];
+                int maxlen = (int)jObject["distribution_params"]["max_len"];
+                FieldParam param = new FieldParam
+                {
+                    max_len = maxlen
+                };
+                return new Field(name, "string", param);
             });
         }
 
         // Takes in the whole config JSON file as a JObject and returns a list of Fields
-        public List<Field> Translate(JObject config)
+        public FullConfig Translate(JObject config)
         {
             List<Field> fields = new List<Field>();
             foreach(JObject fieldConfig in (JArray) config["dimension_attributes"])
@@ -41,7 +65,14 @@ namespace Producer
                 string typeID = (string)fieldConfig["type"];
                 fields.Add(this.CaseAt(typeID, fieldConfig));
             }
-            return fields;
+            FullConfig fullConfig = new FullConfig(
+                (int)config["threads_count"],
+                (int)config["records_count"],
+                (double)config["error_rate"],
+                fields
+                );
+
+            return fullConfig;
         }
     }
 }

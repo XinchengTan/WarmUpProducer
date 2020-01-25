@@ -19,6 +19,26 @@ namespace Producer
         }
     }
 
+    public class IntegerJSONDataGeneratorFactory : IJSONDataGeneratorFactory
+    {
+        public IJSONDataGenerator Make(FieldParam param)
+        {
+            return new IntegerDataGenerator(param.mean, param.standard_deviation);
+
+        }
+    }
+
+
+    public class StringJSONDataGeneratorFactory : IJSONDataGeneratorFactory
+    {
+        public IJSONDataGenerator Make(FieldParam param)
+        {
+            return new StringDataGenerator(param.max_len);
+
+        }
+    }
+
+
     public interface IJSONDataGenerator
     {
         JValue GenerateJsonData();
@@ -40,7 +60,7 @@ namespace Producer
         private static readonly double DEFAULT_MEAN = 0.0;
         private static readonly double DEFAULT_STANDARD_DEVIATION = 20.0;
 
-        public DoubleDataGenerator(double? mean, double? standardDeviation) : this(mean.GetValueOrDefault(DEFAULT_MEAN), standardDeviation.GetValueOrDefault(standardDeviation)) { }
+        public DoubleDataGenerator(double? mean, double? standardDeviation) : this(mean.GetValueOrDefault(DEFAULT_MEAN), standardDeviation.GetValueOrDefault(DEFAULT_STANDARD_DEVIATION)) { }
 
         public DoubleDataGenerator(double mean, double standardDeviation)
         {
@@ -48,22 +68,76 @@ namespace Producer
             this.StandardDeviation = standardDeviation;
         }
 
-
         public double Mean { get; private set; }
 
-        public double StandardDeviation { get; set; }
+        public double StandardDeviation { get; private set; }
 
         public double Generate()
         {
             var data = np.random.normal(this.Mean, this.StandardDeviation, 1);
-
             return data[0];
         }
 
         public JValue GenerateJsonData()
         {
             double data = this.Generate();
+            return new JValue(data);
+        }
+    }
 
+
+    public class IntegerDataGenerator : IDataGenerator<int>
+    {
+        private static readonly double DEFAULT_MEAN = 10.0;
+        private static readonly double DEFAULT_STANDARD_DEVIATION = 10.0;
+
+        public IntegerDataGenerator(double? mean, double? standardDeviation) : this(mean.GetValueOrDefault(DEFAULT_MEAN), standardDeviation.GetValueOrDefault(DEFAULT_STANDARD_DEVIATION)) { }
+
+        public IntegerDataGenerator(double mean, double standardDeviation)
+        {
+            this.Mean = mean;
+            this.StandardDeviation = standardDeviation;
+        }
+
+        public double Mean { get; private set; }
+
+        public double StandardDeviation { get; private set; }
+
+        public int Generate()
+        {
+            var data = np.random.normal(this.Mean, this.StandardDeviation, 1);
+            return (int)data[0];
+        }
+
+        public JValue GenerateJsonData()
+        {
+            int data = this.Generate();
+            return new JValue(data);
+        }
+    }
+
+    public class StringDataGenerator : IDataGenerator<string>
+    {
+        private static readonly int DEFAULT_MAXLEN = 10;
+
+        public StringDataGenerator(int? maxlen) : this(maxlen.GetValueOrDefault(DEFAULT_MAXLEN)) { }
+
+        public StringDataGenerator(int maxlen)
+        {
+            this.MaxLen = maxlen;
+        }
+
+        public double MaxLen { get; private set; }
+
+        public string Generate()
+        {
+            string data = "Random data (hard-coded for now)";
+            return data;
+        }
+
+        public JValue GenerateJsonData()
+        {
+            string data = this.Generate();
             return new JValue(data);
         }
     }

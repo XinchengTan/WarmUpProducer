@@ -5,6 +5,15 @@ namespace Producer
 {
     public interface IProducerToConsumerAdpt
     {
-        public void Send(JToken record);
+        void Send(JToken record);
+
+    }
+
+    public class DefaultAdpt : IProducerToConsumerAdpt
+    {
+        public void Send(JToken record)
+        {
+            // DO NOTHING
+        }
     }
 }
