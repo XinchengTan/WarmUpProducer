@@ -4,29 +4,21 @@ using Newtonsoft.Json.Linq;
 
 namespace Producer
 {
-    // This was our original definition of Producer
-    public class RecordMaker
+    public class RecordProducer
     {
-        private IProducerToConsumerAdpt adapter = new DefaultAdpt();
+        private IProducerToConsumerAdpt adapter;
         private List<IJSONDataGenerator> generators;
         private static readonly Dictionary<string, IJSONDataGeneratorFactory> typeToFacMap = new Dictionary<string, IJSONDataGeneratorFactory>
         {
             {"double", new DoubleJSONDataGeneratorFactory() },
         };
 
-        public RecordMaker(List<Field> fields, IProducerToConsumerAdpt adpt)
+        public RecordProducer(List<Field> fields, IProducerToConsumerAdpt adpt)
         {
             this.adapter = adpt;
             this.generators = this.MakeGenerators(fields);
 
         }
-
-        // FOR TESTING
-        public RecordMaker(List<Field> fields)
-        {
-            this.generators = this.MakeGenerators(fields);
-        }
-
 
         private List<IJSONDataGenerator> MakeGenerators(List<Field> fields)
         {
@@ -40,7 +32,7 @@ namespace Producer
             return typeToFacMap[field.typeID].Make(field.param);
         }
 
-        public JArray MakeRecord()
+        private JToken MakeRecord()
         {
             JArray record = new JArray();
             generators.ForEach(generator => record.Add(generator.GenerateJsonData()));

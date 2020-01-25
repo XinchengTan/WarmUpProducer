@@ -7,21 +7,14 @@ namespace Producer
         public readonly string name;
         public readonly string typeID;
         public readonly FieldParam param;
-        public Field(string name, string typeID, FieldParam param)
-        {
-            this.name = name;
-            this.typeID = typeID;
-            this.param = param;
-        }
-        
         
     }
 
     public struct FieldParam
     {
-        public double? mean;
-        public double? standard_deviation;
-        public int? max_len;
+        public readonly double? mean;
+        public readonly double? standard_deviation;
+        public readonly int? max_len;
 
         // TODO: add all possible args
 
